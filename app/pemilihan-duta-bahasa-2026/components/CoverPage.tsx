@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import coverBg from "../assets/cover-background.webp";
+import logoDubas from "../assets/logo-dubas.png";
 
 interface CoverPageProps {
   guestName: string;
@@ -16,60 +18,98 @@ export default function CoverPage({ guestName, onOpen }: CoverPageProps) {
   };
 
   return (
-    <div className={`dubas-cover ${isOpening ? "dubas-cover--fade-out" : ""}`}>
-      <div className="dubas-cover__bg-overlay" />
+    <div
+      className={`fixed inset-0 z-1000 flex flex-col items-center justify-center overflow-hidden transition-all duration-600 ease-in-out ${
+        isOpening ? "opacity-0 scale-105 pointer-events-none" : ""
+      }`}
+      style={{ backgroundColor: "var(--teal-bg)" }}
+    >
+      {/* Background image */}
+      <div
+        className="absolute inset-0 z-0 scale-110 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${coverBg.src})`,
+          filter: "blur(5px) brightness(0.5)",
+        }}
+      />
+      {/* White overlay */}
+      <div className="absolute inset-0 z-1 bg-white/30" />
+      {/* Fog top */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[35%] z-2 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, var(--teal-bg) 0%, transparent 100%)" }}
+      />
+      {/* Fog bottom */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[35%] z-2 pointer-events-none"
+        style={{ background: "linear-gradient(to top, var(--teal-bg) 0%, transparent 100%)" }}
+      />
 
-      <div className="relative z-2 flex flex-col items-center justify-center w-full max-w-[400px] p-8 text-center">
-        {/* Institutional Logos */}
-        <div className="flex gap-4 mb-6 justify-center">
-          <img
-            src="https://digital-creative.id/wp-content/uploads/2024/05/tut-wuri-hndyn.png"
-            alt="Kemendikbud"
-            className="dubas-cover__mini-logo"
-          />
-          <img
-            src="https://digital-creative.id/wp-content/uploads/2024/05/logo-balai-bahasa.png"
-            alt="Balai Bahasa"
-            className="dubas-cover__mini-logo"
-          />
-        </div>
-
+      <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-sm md:max-w-md lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl px-6 py-12 text-center gap-y-6 md:gap-y-8">
         {/* Duta Bahasa Crest */}
-        <div className="mb-8">
+        <div className="mb-2 md:mb-4">
           <img
-            src="https://digital-creative.id/wp-content/uploads/2024/05/Logo-Dubas-Bali.png"
+            src={logoDubas.src}
             alt="Duta Bahasa Bali"
-            className="dubas-cover__main-crest"
+            className="w-56 md:w-52 lg:w-56 xl:w-60 2xl:w-64 h-auto"
+            style={{ filter: "drop-shadow(0 0 15px rgba(197, 150, 58, 0.5))" }}
           />
         </div>
 
-        <div className="mb-10">
-          <p className="text-sm font-medium tracking-widest uppercase m-0" style={{ fontFamily: "var(--font-body)" }}>
-            Puncak Final
-          </p>
-          <h1 className="dubas-cover__main-title">DUTA BAHASA</h1>
-          <p className="text-sm font-semibold tracking-[0.15em] m-0" style={{ color: "var(--gold-text)", fontFamily: "var(--font-body)" }}>
-            PROVINSI BALI 2026
-          </p>
+        <h1
+          className="text-3xl md:text-[2.2rem] lg:text-[2.8rem] xl:text-[3.2rem] 2xl:text-[3.8rem] font-bold m-0 leading-tight"
+          style={{
+            fontFamily: "'Galada', cursive",
+            color: "var(--gold-text)",
+            textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
+          }}
+        >
+          Duta Bahasa Provinsi Bali 2026
+        </h1>
 
-          <div className="my-6 opacity-70">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold-border)">
-              <path d="M12 2L14.5 9.5H22L16 14.5L18.5 22L12 17L5.5 22L8 14.5L2 9.5H9.5L12 2Z" />
-            </svg>
-          </div>
-
-          <p className="text-sm italic mb-2" style={{ color: "rgba(255, 255, 255, 0.8)", fontFamily: "var(--font-body)" }}>
-            Kepada Yth.
+        <div className="flex flex-col gap-1 md:gap-2 mt-4 md:mt-8">
+          <p
+            className="text-xs md:text-base lg:text-lg xl:text-xl text-white/80 uppercase tracking-[0.3em] font-semibold"
+            style={{ 
+              fontFamily: "var(--font-body)",
+              textShadow: "0 1px 3px rgba(0,0,0,0.3)"
+            }}
+          >
+            Kpd Bpk/Ibu/Saudara/i
           </p>
-          <h2 className="text-2xl font-bold m-0" style={{ fontFamily: "var(--font-heading)", textShadow: "0 2px 5px rgba(0,0,0,0.3)" }}>
+          <h2
+            className="text-2xl md:text-2xl lg:text-4xl xl:text-5xl font-bold m-0 text-white"
+            style={{
+              fontFamily: "var(--font-heading)",
+              textShadow: "0 2px 5px rgba(0,0,0,0.3)",
+            }}
+          >
             {guestName || "Tamu Undangan"}
           </h2>
         </div>
 
+        <p
+          className="text-sm md:text-sm lg:text-base xl:text-lg leading-relaxed text-white/90 max-w-[280px] md:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto font-medium"
+          style={{ 
+            fontFamily: "var(--font-body)",
+            textShadow: "0 1px 3px rgba(0,0,0,0.3)"
+          }}
+        >
+          Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bpk/Ibu/Saudara/i Untuk
+          Hadir Di Acara Puncak Final Pemilihan Duta Bahasa Provinsi Bali 2026
+        </p>
+
         <button
           onClick={handleOpen}
-          className={`dubas-cover__open-btn ${isOpening ? "dubas-cover__open-btn--clicked" : ""}`}
           disabled={isOpening}
+          className={`inline-flex items-center gap-3 bg-white/20 border-2 border-white/40 rounded-md text-white font-bold text-base md:text-lg lg:text-xl  cursor-pointer backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-500 ease-out hover:bg-white/30 hover:border-white hover:-translate-y-1 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4)] active:scale-95 ${
+            isOpening ? "opacity-70 scale-95!" : ""
+          }`}
+          style={{ 
+            fontFamily: "var(--font-body)",
+            textShadow: "0 1px 4px rgba(0,0,0,0.3)",
+            padding: "4px 8px"
+          }}
         >
           <svg
             width="20"

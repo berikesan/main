@@ -8,6 +8,11 @@ export const metadata: Metadata = {
     title: "Puncak Final Duta Bahasa Provinsi Bali 2026",
     description: "Undangan Digital Puncak Final Pemilihan Duta Bahasa Provinsi Bali 2026",
     type: "website",
+    images: [
+      {
+        url: "/pemilihan-duta-bahasa-2026/opengraph-image.jpg",
+      },
+    ],
   },
 };
 
