@@ -1,0 +1,8 @@
+/* Product B — design tokens */
+.product-b-root {
+  --color-primary: #10B981;
+  --color-secondary: #ECFDF5;
+  --color-accent: #34D399;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}

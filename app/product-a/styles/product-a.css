@@ -1,0 +1,8 @@
+/* Product A — design tokens */
+.product-a-root {
+  --color-primary: #3B82F6;
+  --color-secondary: #EFF6FF;
+  --color-accent: #60A5FA;
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
