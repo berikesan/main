@@ -11,12 +11,12 @@ export default function EventDetailsSection() {
   const pad = (n: number) => n.toString().padStart(2, "0");
 
   return (
-    <section className="max-w-[500px] mx-auto py-16 px-6 text-center" style={{ backgroundColor: "var(--teal-bg)" }} ref={ref}>
+    <section className="max-w-[500px] mx-auto py-16 px-6 text-center bg-(--teal-bg)" ref={ref}>
       {/* Event details card */}
-      <div className="dubas-event__card animate-on-scroll">
+      <div className="bg-white/5 border border-[rgba(197,150,58,0.2)] rounded-[20px] px-6 py-8 backdrop-blur-[10px] shadow-[0_10px_30px_rgba(0,0,0,0.2)] animate-on-scroll">
         {/* Date */}
         <div className="flex items-center gap-4 text-left mb-6">
-          <div className="dubas-event__icon-circle">
+          <div className="text-(--gold-text) shrink-0">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="3" y="4" width="18" height="18" rx="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
@@ -25,10 +25,10 @@ export default function EventDetailsSection() {
             </svg>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-widest mb-0.5" style={{ color: "rgba(255, 255, 255, 0.6)", fontFamily: "var(--font-body)" }}>
+            <p className="text-xs uppercase tracking-widest mb-0.5 text-white/60 font-(family-name:--font-body)">
               Hari / Tanggal
             </p>
-            <p className="text-lg font-semibold" style={{ fontFamily: "var(--font-heading)" }}>
+            <p className="text-lg font-semibold font-(family-name:--font-heading)">
               {EVENT_INFO.date}
             </p>
           </div>
@@ -36,17 +36,17 @@ export default function EventDetailsSection() {
 
         {/* Time */}
         <div className="flex items-center gap-4 text-left mb-6">
-          <div className="dubas-event__icon-circle">
+          <div className="text-(--gold-text) shrink-0">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12,6 12,12 16,14" />
             </svg>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-widest mb-0.5" style={{ color: "rgba(255, 255, 255, 0.6)", fontFamily: "var(--font-body)" }}>
+            <p className="text-xs uppercase tracking-widest mb-0.5 text-white/60 font-(family-name:--font-body)">
               Waktu
             </p>
-            <p className="text-lg font-semibold" style={{ fontFamily: "var(--font-heading)" }}>
+            <p className="text-lg font-semibold font-(family-name:--font-heading)">
               {EVENT_INFO.time}
             </p>
           </div>
@@ -54,17 +54,17 @@ export default function EventDetailsSection() {
 
         {/* Venue */}
         <div className="flex items-center gap-4 text-left mb-6">
-          <div className="dubas-event__icon-circle">
+          <div className="text-(--gold-text) shrink-0">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
               <circle cx="12" cy="9" r="2.5" />
             </svg>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-widest mb-0.5" style={{ color: "rgba(255, 255, 255, 0.6)", fontFamily: "var(--font-body)" }}>
+            <p className="text-xs uppercase tracking-widest mb-0.5 text-white/60 font-(family-name:--font-body)">
               Tempat
             </p>
-            <p className="text-lg font-semibold" style={{ fontFamily: "var(--font-heading)" }}>
+            <p className="text-lg font-semibold font-(family-name:--font-heading)">
               {EVENT_INFO.venue}
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function EventDetailsSection() {
           href={EVENT_INFO.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="dubas-event__maps-btn"
+          className="inline-flex items-center gap-2 mt-4 text-(--gold-text) no-underline text-[0.9rem] font-semibold border-b border-transparent transition-all duration-300 hover:border-(--gold-text)"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
@@ -87,7 +87,7 @@ export default function EventDetailsSection() {
 
       {/* Countdown */}
       <div className="animate-on-scroll mt-12">
-        <h3 className="text-xl font-bold mb-6" style={{ fontFamily: "var(--font-heading)", color: "var(--gold-text)" }}>
+        <h3 className="text-xl font-bold mb-6 font-(family-name:--font-heading) text-(--gold-text)">
           Menuju Puncak Acara
         </h3>
 
@@ -98,11 +98,11 @@ export default function EventDetailsSection() {
             { value: pad(minutes), label: "Menit" },
             { value: pad(seconds), label: "Detik" },
           ].map((item) => (
-            <div key={item.label} className="dubas-event__countdown-box">
-              <span className="text-2xl font-bold block" style={{ fontFamily: "var(--font-heading)" }}>
+            <div key={item.label} className="bg-white/8 border border-[rgba(197,150,58,0.2)] rounded-xl py-3 px-1">
+              <span className="text-2xl font-bold block font-(family-name:--font-heading)">
                 {isExpired ? "00" : item.value}
               </span>
-              <span className="text-xs uppercase" style={{ color: "var(--gold-text)", fontFamily: "var(--font-body)" }}>
+              <span className="text-xs uppercase text-(--gold-text) font-(family-name:--font-body)">
                 {item.label}
               </span>
             </div>

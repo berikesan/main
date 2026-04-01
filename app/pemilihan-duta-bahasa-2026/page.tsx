@@ -27,17 +27,14 @@ function InvitationContent() {
   };
 
   return (
-    <main className="min-h-screen" style={{ backgroundColor: "var(--teal-bg)" }}>
+    <main className="min-h-screen bg-(--teal-bg)">
       {!showContent && (
         <CoverPage guestName={guestName} onOpen={handleOpen} />
       )}
 
       {isOpen && (
         <div
-          style={{
-            opacity: showContent ? 1 : 0,
-            transition: "opacity 1s ease-out",
-          }}
+          className={`transition-opacity duration-1000 ease-out ${showContent ? "opacity-100" : "opacity-0"}`}
         >
           <HeroSection />
           <SambutanSection />
@@ -57,10 +54,7 @@ export default function PemilihanDutaBahasaPage() {
   return (
     <Suspense
       fallback={
-        <div
-          className="min-h-screen flex items-center justify-center"
-          style={{ backgroundColor: "var(--teal-deep)", color: "var(--gold-accent)" }}
-        >
+        <div className="min-h-screen flex items-center justify-center bg-(--teal-deep) text-(--gold-accent)">
           Memuat undangan...
         </div>
       }
