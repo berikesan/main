@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/pildubas-2026",
-      "destination": "https://duta-bahasa-provinsi-bali-2026.berikesan.com"
+      "destination": "https://dutabahasa2026.vercel.app"
     },
     {
       "source": "/pildubas-2026/:path*",
-      "destination": "https://duta-bahasa-provinsi-bali-2026.berikesan.com/:path*"
+      "destination": "https://dutabahasa2026.vercel.app/:path*"
     }
   ]
 }
