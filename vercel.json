@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/pildubas-2026",
-      "destination": "https://dutabahasa2026.vercel.app"
+      "destination": "https://dutabahasa2026.vercel.app/pildubas-2026"
     },
     {
       "source": "/pildubas-2026/:path*",
-      "destination": "https://dutabahasa2026.vercel.app/:path*"
+      "destination": "https://dutabahasa2026.vercel.app/pildubas-2026/:path*"
     }
   ]
 }
