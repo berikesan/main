@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/pildubas-2026",
+      "destination": "https://duta-bahasa-provinsi-bali-2026.berikesan.com"
+    },
+    {
+      "source": "/pildubas-2026/:path*",
+      "destination": "https://duta-bahasa-provinsi-bali-2026.berikesan.com/:path*"
+    }
+  ]
+}
