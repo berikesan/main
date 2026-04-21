@@ -2,12 +2,12 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/pildubas-2026",
-      "destination": "https://dutabahasa2026.vercel.app/pildubas-2026"
+      "source": "/pildubas-bali-2026",
+      "destination": "https://dutabahasa2026.vercel.app/pildubas-bali-2026"
     },
     {
-      "source": "/pildubas-2026/:path*",
-      "destination": "https://dutabahasa2026.vercel.app/pildubas-2026/:path*"
+      "source": "/pildubas-bali-2026/:path*",
+      "destination": "https://dutabahasa2026.vercel.app/pildubas-bali-2026/:path*"
     }
   ]
 }
