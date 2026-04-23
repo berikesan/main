@@ -8,6 +8,14 @@
     {
       "source": "/pildubas-bali-2026/:path*",
       "destination": "https://dutabahasa2026.vercel.app/pildubas-bali-2026/:path*"
+    },
+    {
+      "source": "/invitation",
+      "destination": "https://invitation-web-kappa.vercel.app/invitation"
+    },
+    {
+      "source": "/invitation/:path*",
+      "destination": "https://invitation-web-kappa.vercel.app/invitation/:path*"
     }
   ]
 }
